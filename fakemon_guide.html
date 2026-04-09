@@ -219,6 +219,146 @@ h2, h1 { scroll-margin-top: 24px; }
 .strat-card.do h4   { color: #138a3e; }
 .strat-card.dont h4 { color: #b91c1c; }
 .strat-card ul { padding-left: 18px; font-size: 14px; line-height: 1.8; }
+
+/* ── BUG TESTING SECTION ── */
+
+/* Debug log mock */
+.fake-debug {
+  background: #060610;
+  border: 1.5px solid #3a2a60;
+  border-radius: var(--radius);
+  font-family: var(--font-c);
+  font-size: 12px;
+  overflow: hidden;
+  margin: 14px 0;
+}
+.fake-debug-header {
+  background: #10082a;
+  padding: 7px 14px;
+  font-family: var(--font-h);
+  font-size: 13px;
+  color: #a080f0;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #2a1a48;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.fake-debug-header span { color: #5040a0; font-size: 11px; font-family: var(--font-b); }
+.fake-debug-body { padding: 10px 14px; display: flex; flex-direction: column; gap: 3px; }
+.fdl { display: flex; gap: 8px; padding: 2px 5px; border-radius: 3px; }
+.fdl-ts   { color: #3a3460; font-size: 10px; white-space: nowrap; flex-shrink: 0; }
+.fdl-icon { flex-shrink: 0; }
+.fdl-msg  { flex: 1; word-break: break-word; }
+.fdl.dl-info   { background: rgba(0,60,140,.14); }
+.fdl.dl-ok     { background: rgba(0,90,50,.18); }
+.fdl.dl-warn   { background: rgba(130,90,0,.18); }
+.fdl.dl-error  { background: rgba(150,15,15,.22); }
+.fdl.dl-battle { background: rgba(20,90,55,.14); }
+.fdl.dl-score  { background: rgba(100,50,140,.16); }
+.fdl.dl-info   .fdl-icon, .fdl.dl-info   .fdl-msg { color: #80c0ff; }
+.fdl.dl-ok     .fdl-icon, .fdl.dl-ok     .fdl-msg { color: #56c87a; }
+.fdl.dl-warn   .fdl-icon, .fdl.dl-warn   .fdl-msg { color: #f5c842; font-weight: 600; }
+.fdl.dl-error  .fdl-icon, .fdl.dl-error  .fdl-msg { color: #ff6060; font-weight: 700; }
+.fdl.dl-battle .fdl-icon, .fdl.dl-battle .fdl-msg { color: #60d090; }
+.fdl.dl-score  .fdl-icon, .fdl.dl-score  .fdl-msg { color: #d890ff; }
+/* highlighted parts in debug messages */
+.fdl .hi-field  { background: #2a1040; color: #e0a0ff; padding: 0 4px; border-radius: 3px; }
+.fdl .hi-fix    { background: #0a2a10; color: #80ff80; padding: 0 4px; border-radius: 3px; }
+.fdl .hi-val    { background: #2a1800; color: #ffcc80; padding: 0 4px; border-radius: 3px; }
+
+/* Error scenario cards */
+.bug-grid { display: grid; gap: 16px; margin: 16px 0; }
+.bug-card {
+  border: 1.5px solid #e0d0f0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.bug-card-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  background: #f8f4ff;
+  border-bottom: 1px solid #e0d0f0;
+}
+.bug-icon { font-size: 22px; flex-shrink: 0; }
+.bug-title { font-family: var(--font-h); font-size: 17px; color: #3a1a5a; }
+.bug-subtitle { font-size: 12px; color: var(--muted); font-weight: 600; }
+.bug-card-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.bug-label { font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+
+/* Workflow steps */
+.workflow { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+.wf-step {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-bottom: none;
+  position: relative;
+}
+.wf-step:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.wf-step:last-child  { border-bottom: 1.5px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); }
+.wf-step:only-child  { border-radius: var(--radius); border-bottom: 1.5px solid var(--border); }
+.wf-num {
+  background: var(--card); color: var(--accent);
+  font-family: var(--font-h); font-size: 14px;
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.wf-content h4 { font-family: var(--font-h); font-size: 16px; color: var(--card); margin-bottom: 4px; }
+.wf-content p  { font-size: 14px; color: #444; line-height: 1.55; }
+.wf-content code { font-family: var(--font-c); background: #f0f0f8; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+
+/* Key shortcut pill */
+.kbd {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-family: var(--font-c); font-size: 12px; font-weight: 700;
+  background: #1e1e38; color: #f5c842;
+  padding: 3px 8px; border-radius: 6px;
+  border: 1.5px solid #3a3a60;
+  box-shadow: 0 2px 0 #0a0a18;
+  white-space: nowrap;
+}
+
+/* Filter tab example */
+.filter-tabs-demo { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+.ftab {
+  font-family: var(--font-c); font-size: 11px; font-weight: 700;
+  padding: 4px 10px; border-radius: 6px; border: 1.5px solid;
+  cursor: default;
+}
+.ftab.t-all     { background: #1a1830; color: #c0c0e0; border-color: #4040a0; }
+.ftab.t-info    { background: rgba(0,60,140,.18); color: #80c0ff; border-color: #2060c0; }
+.ftab.t-battle  { background: rgba(20,90,55,.2);  color: #60d090; border-color: #208050; }
+.ftab.t-ok      { background: rgba(0,90,50,.2);   color: #56c87a; border-color: #22aa55; }
+.ftab.t-warn    { background: rgba(130,90,0,.2);  color: #f5c842; border-color: #c09000; }
+.ftab.t-error   { background: rgba(150,15,15,.22);color: #ff6060; border-color: #cc2020; }
+
+/* Github flow diagram */
+.gh-flow {
+  display: flex; align-items: center; gap: 0;
+  flex-wrap: wrap;
+  margin: 14px 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+.gh-box {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 110px;
+}
+.gh-box .gh-icon { font-size: 22px; display: block; margin-bottom: 4px; }
+.gh-box .gh-label { font-size: 12px; color: var(--card); font-weight: 700; }
+.gh-box .gh-sub   { font-size: 10px; color: var(--muted); font-weight: 600; margin-top: 2px; }
+.gh-arr { font-size: 20px; color: var(--muted); padding: 0 4px; }
+.gh-time-label {
+  font-size: 11px; color: #b83020; font-weight: 800;
+  background: #fff0ed; border: 1px solid #e85d20;
+  border-radius: 6px; padding: 2px 7px;
+  white-space: nowrap;
+}
 </style>
 </head>
 <body>
@@ -245,6 +385,7 @@ h2, h1 { scroll-margin-top: 24px; }
       <li><a href="#s9">Adding to the Game</a></li>
       <li><a href="#s10">Strategy Tips</a></li>
       <li><a href="#s11">Final Checklist</a></li>
+      <li><a href="#s12">🐛 Bug Testing Guide</a></li>
     </ol>
   </div>
 
@@ -962,6 +1103,409 @@ h2, h1 { scroll-margin-top: 24px; }
     </ul>
     <div class="callout win" style="margin-top:20px; font-size:16px;"><span class="ci">🐉</span> Good luck, and have fun! The weirdest, most creative Fakemon are usually the most fun to battle with. Make it yours!</div>
   </div>
+
+  <!-- ══ 12. BUG TESTING GUIDE ═══════════════════════════════════════════════ -->
+  <div class="section" id="s12" style="border-top: 4px solid #a855f7; margin-top: 0;">
+    <div class="section-header" style="border-bottom-color: #a855f7;">
+      <div class="section-num" style="background:#3a1a5a; color:#d090ff;">12</div>
+      <h2>🐛 Bug Testing Your Fakemon</h2>
+    </div>
+
+    <p>Something's not working? Don't panic — that's totally normal. This section will walk you through exactly how to find and fix problems with your Fakemon file.</p>
+
+    <!-- ── THE BASIC WORKFLOW ── -->
+    <h3 style="font-family:var(--font-h);font-size:20px;margin:22px 0 12px;color:var(--card);">📋 The Basic Testing Workflow</h3>
+    <p style="margin-bottom:14px;">Every time you make a change, follow these steps:</p>
+
+    <div class="workflow">
+      <div class="wf-step">
+        <div class="wf-num">1</div>
+        <div class="wf-content">
+          <h4>Make your change in the editor</h4>
+          <p>Edit your <code>.json</code> file in the GitHub editor (or VS Code if you have it). Fix one thing at a time so you know what worked.</p>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">2</div>
+        <div class="wf-content">
+          <h4>Commit &amp; push to GitHub</h4>
+          <p>Your changes do NOT go live until you commit them. In GitHub Dev, click the <strong>Source Control</strong> panel (the branching icon on the left), write a short message like <code>fix missing comma</code>, then click <strong>Commit &amp; Push</strong>. If you skip this, the game will still show your old file!</p>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">3</div>
+        <div class="wf-content">
+          <h4>Wait for GitHub Pages to rebuild — up to 2 minutes!</h4>
+          <p>After you push, GitHub has to rebuild the site. This takes anywhere from <strong>30 seconds to 2 minutes</strong>. There is no sound or notification — you just have to wait. If you reload immediately, you'll see your old file. Get a drink of water. Come back. Then reload.</p>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">4</div>
+        <div class="wf-content">
+          <h4>Hard refresh the page — don't just press reload!</h4>
+          <p>Your browser keeps a copy of old files in its cache. A normal refresh just shows you that cached (old) copy. You need a <strong>hard refresh</strong> to force the browser to download the new files from GitHub. On a Chromebook:</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;align-items:center;">
+            <kbd class="kbd">Ctrl + Shift + R</kbd>
+            <span style="color:var(--muted);font-weight:700;">or</span>
+            <kbd class="kbd">Ctrl + F5</kbd>
+            <span style="color:var(--muted);font-weight:700;">or</span>
+            <span style="font-size:13px;color:#444;">Hold <kbd class="kbd">Ctrl</kbd> and click the reload button 🔄</span>
+          </div>
+          <p style="margin-top:8px;font-size:13px;color:#b83020;font-weight:700;">⚠️ If you're not hard refreshing, you might be testing OLD code and wasting your time!</p>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-num">5</div>
+        <div class="wf-content">
+          <h4>Check the debug panel</h4>
+          <p>Open the game page. The <strong>🐛 DEBUG</strong> panel at the top of the screen shows you exactly what happened when your file loaded. Red = broken. Yellow = warning. Green = good.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GITHUB PAGES TIMING ── -->
+    <h3 style="font-family:var(--font-h);font-size:20px;margin:26px 0 12px;color:var(--card);">⏱ The GitHub Pages Delay — Why Can't I See My Changes?</h3>
+
+    <p style="margin-bottom:12px;">Your game is hosted on GitHub Pages. When you push a change, it doesn't appear instantly. Here's what's happening behind the scenes:</p>
+
+    <div class="gh-flow" style="gap:4px;flex-wrap:wrap;justify-content:center;padding:16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);">
+      <div class="gh-box">
+        <span class="gh-icon">✏️</span>
+        <div class="gh-label">You edit</div>
+        <div class="gh-sub">in GitHub Dev</div>
+      </div>
+      <div class="gh-arr">→</div>
+      <div class="gh-box">
+        <span class="gh-icon">📤</span>
+        <div class="gh-label">Commit &amp; Push</div>
+        <div class="gh-sub">saves to GitHub</div>
+      </div>
+      <div class="gh-arr">→</div>
+      <div class="gh-box" style="border-color:#f5c842;">
+        <span class="gh-icon">⚙️</span>
+        <div class="gh-label">GitHub rebuilds</div>
+        <div class="gh-sub" style="color:#b08a00;font-weight:800;">30 sec – 2 min</div>
+      </div>
+      <div class="gh-arr">→</div>
+      <div class="gh-box">
+        <span class="gh-icon">🌐</span>
+        <div class="gh-label">Site updates</div>
+        <div class="gh-sub">live on web</div>
+      </div>
+      <div class="gh-arr">→</div>
+      <div class="gh-box" style="border-color:#22c55e;">
+        <span class="gh-icon">🔄</span>
+        <div class="gh-label">Hard refresh</div>
+        <div class="gh-sub" style="color:#138a3e;font-weight:800;">Ctrl+Shift+R</div>
+      </div>
+    </div>
+
+    <div class="callout warn" style="margin-top:14px;"><span class="ci">⚠️</span> <strong>The #1 student mistake:</strong> Making a fix, reloading the page immediately, seeing the same error, and thinking the fix didn't work — when actually GitHub just hadn't rebuilt yet. Always wait the full 2 minutes and hard refresh!</div>
+
+    <div class="callout tip"><span class="ci">💡</span> You can check if GitHub is still building by going to your repo on github.com and clicking <strong>Actions</strong>. A yellow circle 🟡 means it's still building. A green checkmark ✅ means it's done.</div>
+
+    <!-- ── HOW TO READ THE DEBUG LOG ── -->
+    <h3 style="font-family:var(--font-h);font-size:20px;margin:26px 0 12px;color:var(--card);">🔍 How to Read the Debug Log</h3>
+
+    <p style="margin-bottom:10px;">The debug panel color-codes every message. Use the <strong>filter tabs</strong> to show only what you care about:</p>
+
+    <div class="filter-tabs-demo">
+      <span class="ftab t-all">ALL</span>
+      <span class="ftab t-info">ℹ INFO</span>
+      <span class="ftab t-battle">⚔ BATTLE</span>
+      <span class="ftab t-ok">✓ OK</span>
+      <span class="ftab t-warn">⚠ WARN</span>
+      <span class="ftab t-error">✗ ERROR</span>
+    </div>
+
+    <table class="guide-table" style="margin-top:12px;">
+      <thead><tr><th>Colour</th><th>What it means</th><th>When to click it</th></tr></thead>
+      <tbody>
+        <tr><td>🔵 Blue (INFO)</td><td>Normal background info — file loading, stats, turn details</td><td>You want to understand exactly what happened step by step</td></tr>
+        <tr><td>🟢 Green (OK)</td><td>Something succeeded — file loaded, status applied, Fakemon added</td><td>You want to confirm things worked</td></tr>
+        <tr><td>🟡 Yellow (WARN)</td><td>Not broken but something's missing or suspicious</td><td>Your Fakemon loads but something might be off — check first!</td></tr>
+        <tr><td>🔴 Red (ERROR)</td><td>Something failed — broken JSON, missing field, wrong value</td><td><strong>Always check this first.</strong> Errors are why your Fakemon won't load.</td></tr>
+        <tr><td>🟢 Teal (BATTLE)</td><td>Battle events — turns, damage, speed order</td><td>You want to understand what's happening mid-fight</td></tr>
+        <tr><td>🟣 Purple (SCORE)</td><td>Power level calculations</td><td>You want to see how strong your Fakemon scored</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout info"><span class="ci">ℹ️</span> <strong>Start here every time:</strong> Click the <strong>✗ ERROR</strong> filter tab first. If there are zero red messages, your file loaded correctly. Then click <strong>⚠ WARN</strong> to check for anything suspicious.</div>
+
+    <!-- ── COMMON ERRORS ── -->
+    <h3 style="font-family:var(--font-h);font-size:20px;margin:26px 0 12px;color:var(--card);">🚨 Common Errors &amp; How to Fix Them</h3>
+
+    <div class="bug-grid">
+
+      <!-- 1: JSON parse error -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">💥</div>
+          <div>
+            <div class="bug-title">Broken JSON — won't load at all</div>
+            <div class="bug-subtitle">Usually a missing comma, quote, or bracket</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What you see in the debug log</div>
+            <div class="fake-debug">
+              <div class="fake-debug-header">🐛 DEBUG <span>filter: ✗ ERROR</span></div>
+              <div class="fake-debug-body">
+                <div class="fdl dl-error"><span class="fdl-ts">[00:01:04]</span><span class="fdl-icon">✗</span><span class="fdl-msg">FAILED to load <span class="hi-field">myfakemon.json</span>: <span class="hi-val">Invalid JSON: Unexpected token } in JSON at position 312</span></span></div>
+                <div class="fdl dl-error"><span class="fdl-ts">[00:01:04]</span><span class="fdl-icon">✗</span><span class="fdl-msg">File should end with } (closing curly brace)</span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bug-label">How to fix it</div>
+            <p style="font-size:14px;line-height:1.6;">Your JSON has a typo somewhere. The most common causes:</p>
+            <ul style="font-size:13px;padding-left:18px;line-height:2;margin-top:6px;">
+              <li><strong>Missing comma</strong> between two moves — every move except the last one needs a <code>,</code> after its closing <code>}</code></li>
+              <li><strong>Extra comma</strong> after the last move in the list — the last item before <code>]</code> must NOT have a comma</li>
+              <li><strong>Missing quote</strong> around a value — all text values need <code>"quotes"</code></li>
+              <li><strong>Using single quotes</strong> like <code>'fire'</code> — JSON only accepts <code>"double quotes"</code></li>
+              <li><strong>Mismatched brackets</strong> — every <code>{</code> needs a matching <code>}</code> and every <code>[</code> needs a <code>]</code></li>
+            </ul>
+            <div class="callout tip" style="margin-top:10px;font-size:13px;"><span class="ci">💡</span> Paste your JSON into <strong>jsonlint.com</strong> — it will point to the exact line with the problem!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: File not found -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">🔍</div>
+          <div>
+            <div class="bug-title">File not found (404 error)</div>
+            <div class="bug-subtitle">The game can't find your JSON file</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What you see in the debug log</div>
+            <div class="fake-debug">
+              <div class="fake-debug-header">🐛 DEBUG <span>filter: ✗ ERROR</span></div>
+              <div class="fake-debug-body">
+                <div class="fdl dl-error"><span class="fdl-ts">[00:01:02]</span><span class="fdl-icon">✗</span><span class="fdl-msg">FAILED to load <span class="hi-field">fakemon/Blazkit.json</span>: <span class="hi-val">HTTP 404 — file not found</span></span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bug-label">How to fix it</div>
+            <ul style="font-size:13px;padding-left:18px;line-height:2;margin-top:4px;">
+              <li>Make sure your file is inside the <code>fakemon/</code> folder, not the root of the project</li>
+              <li>Check the filename in <code>fakemonlist.json</code> matches your file exactly — including capitals and the <code>.json</code> extension</li>
+              <li><strong>Capitalization matters!</strong> <code>Blazkit.json</code> ≠ <code>blazkit.json</code>. GitHub is case-sensitive.</li>
+              <li>Check that you actually committed and pushed the file — if you only saved it locally in GitHub Dev without committing, it won't exist on the server</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Wrong status -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">❓</div>
+          <div>
+            <div class="bug-title">Unknown status or bad statTarget</div>
+            <div class="bug-subtitle">A move has a typo in its status or statTarget value</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What you see in the debug log</div>
+            <div class="fake-debug">
+              <div class="fake-debug-header">🐛 DEBUG <span>filter: ✗ ERROR</span></div>
+              <div class="fake-debug-body">
+                <div class="fdl dl-error"><span class="fdl-ts">[00:01:03]</span><span class="fdl-icon">✗</span><span class="fdl-msg">Move 3 (🔥 Fire Snap): unknown status <span class="hi-val">"Burn"</span> — did you mean <span class="hi-fix">"burn"</span>?</span></div>
+                <div class="fdl dl-error"><span class="fdl-ts">[00:01:03]</span><span class="fdl-icon">✗</span><span class="fdl-msg">Move 5 (📈 Power Up): "statTarget" must be one of: <span class="hi-fix">atk, speed, defense, accuracy</span></span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bug-label">How to fix it</div>
+            <p style="font-size:14px;margin-bottom:6px;">Status names and statTarget values are case-sensitive — all lowercase, no capitals:</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:13px;">
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">poison</code>
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">burn</code>
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">paralyze</code>
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">sleep</code>
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">confuse</code>
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">flinch</code>
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">statup</code>
+              <code style="background:#f0f0f8;padding:2px 6px;border-radius:4px;">statdwn</code>
+            </div>
+            <p style="font-size:13px;margin-top:8px;">Valid statTarget values: <code>atk</code> · <code>speed</code> · <code>defense</code> · <code>accuracy</code></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: Missing statTarget -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">🎯</div>
+          <div>
+            <div class="bug-title">statup / statdwn move does nothing</div>
+            <div class="bug-subtitle">Forgot to add statTarget — it defaults to "atk" silently</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What you see in the debug log (⚠ WARN tab)</div>
+            <div class="fake-debug">
+              <div class="fake-debug-header">🐛 DEBUG <span>filter: ⚠ WARN</span></div>
+              <div class="fake-debug-body">
+                <div class="fdl dl-warn"><span class="fdl-ts">[00:01:03]</span><span class="fdl-icon">⚠</span><span class="fdl-msg">Move 4 (🛡️ Iron Shell): has status <span class="hi-field">statup</span> but no <span class="hi-field">statTarget</span> — defaulting to <span class="hi-val">"atk"</span></span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bug-label">How to fix it</div>
+            <p style="font-size:14px;">Add <code>"statTarget": "defense"</code> (or whichever stat you meant to boost) to the move object. See the statTarget table in Section 4 for all options.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: No damage move -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">⚔️</div>
+          <div>
+            <div class="bug-title">Fakemon loads but battles never end</div>
+            <div class="bug-subtitle">No damage moves — it can never knock out the enemy</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What you see in the debug log (⚠ WARN tab)</div>
+            <div class="fake-debug">
+              <div class="fake-debug-header">🐛 DEBUG <span>filter: ⚠ WARN</span></div>
+              <div class="fake-debug-body">
+                <div class="fdl dl-warn"><span class="fdl-ts">[00:01:02]</span><span class="fdl-icon">⚠</span><span class="fdl-msg">No damage moves found — <span class="hi-val">Fakemon may never finish a fight</span></span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bug-label">How to fix it</div>
+            <p style="font-size:14px;">Add at least one move where <code>"damage"</code> has two positive numbers, like <code>[15, 22]</code>. A move with <code>[0, 0]</code> deals no damage.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6: Wrong type -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">🏷️</div>
+          <div>
+            <div class="bug-title">Unknown type error</div>
+            <div class="bug-subtitle">The type field has a typo or wrong capitalisation</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What you see in the debug log</div>
+            <div class="fake-debug">
+              <div class="fake-debug-header">🐛 DEBUG <span>filter: ✗ ERROR</span></div>
+              <div class="fake-debug-body">
+                <div class="fdl dl-error"><span class="fdl-ts">[00:01:02]</span><span class="fdl-icon">✗</span><span class="fdl-msg">Unknown type <span class="hi-val">"fire"</span> — valid types: <span class="hi-fix">Fire, Water, Air, Earth, Electric, Ice, Poison, Dark, Ghost, Metal, Nature, Normal</span></span></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bug-label">How to fix it</div>
+            <p style="font-size:14px;">Type names start with a capital letter: <code>"Fire"</code> not <code>"fire"</code>, <code>"Electric"</code> not <code>"electric"</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7: Fakemon not in list -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">📋</div>
+          <div>
+            <div class="bug-title">My Fakemon doesn't appear on the select screen</div>
+            <div class="bug-subtitle">File exists but wasn't added to fakemonlist.json</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What you see in the debug log (ℹ INFO tab)</div>
+            <div class="fake-debug">
+              <div class="fake-debug-header">🐛 DEBUG <span>filter: ✓ OK</span></div>
+              <div class="fake-debug-body">
+                <div class="fdl dl-ok"><span class="fdl-ts">[00:01:01]</span><span class="fdl-icon">✓</span><span class="fdl-msg">fakemonlist.json OK — <span class="hi-val">3 entries found</span></span></div>
+                <div class="fdl dl-ok"><span class="fdl-ts">[00:01:02]</span><span class="fdl-icon">✓</span><span class="fdl-msg">Loaded <span class="hi-val">3 / 3</span> Fakemon successfully</span></div>
+              </div>
+            </div>
+            <p style="font-size:13px;color:var(--muted);margin-top:6px;">If the count doesn't include yours, your file isn't in the list.</p>
+          </div>
+          <div>
+            <div class="bug-label">How to fix it</div>
+            <p style="font-size:14px;">Open <code>fakemon/fakemonlist.json</code> and add your filename to the array. Make sure the filename matches exactly — including <code>.json</code> at the end and correct capitalisation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8: Stale cache -->
+      <div class="bug-card">
+        <div class="bug-card-header">
+          <div class="bug-icon">🗄️</div>
+          <div>
+            <div class="bug-title">I fixed the bug but it's still broken!</div>
+            <div class="bug-subtitle">The browser is showing you an old cached version</div>
+          </div>
+        </div>
+        <div class="bug-card-body">
+          <div>
+            <div class="bug-label">What's happening</div>
+            <p style="font-size:14px;">Your browser saves copies of files so pages load faster. This is called a <strong>cache</strong>. When you update your file and reload normally, the browser often shows the old cached copy — not the new one you just uploaded. This makes it look like your fix didn't work even when it did!</p>
+          </div>
+          <div>
+            <div class="bug-label">How to hard refresh on a Chromebook</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <kbd class="kbd">Ctrl + Shift + R</kbd>
+                <span style="font-size:13px;color:#444;">Hard refresh (most reliable)</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <kbd class="kbd">Ctrl + F5</kbd>
+                <span style="font-size:13px;color:#444;">Same as above, alternate shortcut</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                <span style="font-size:13px;color:#444;">Hold <kbd class="kbd">Ctrl</kbd> and click the 🔄 reload button in the address bar</span>
+              </div>
+            </div>
+            <div class="callout warn" style="margin-top:10px;font-size:13px;"><span class="ci">⚠️</span> A normal reload (<kbd class="kbd">Ctrl + R</kbd> or the 🔄 button alone) is NOT enough. Always use Ctrl+Shift+R after pushing changes!</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /bug-grid -->
+
+    <!-- ── READING A SUCCESSFUL LOG ── -->
+    <h3 style="font-family:var(--font-h);font-size:20px;margin:26px 0 12px;color:var(--card);">✅ What a Healthy Debug Log Looks Like</h3>
+    <p style="margin-bottom:10px;">Here's what you want to see when everything is working. Switch to the <strong>✓ OK</strong> tab to check:</p>
+
+    <div class="fake-debug">
+      <div class="fake-debug-header">🐛 DEBUG <span>showing: all</span></div>
+      <div class="fake-debug-body">
+        <div class="fdl dl-ok"><span class="fdl-ts">[00:01:00]</span><span class="fdl-icon">✓</span><span class="fdl-msg">fakemon-battle.js loaded — starting up!</span></div>
+        <div class="fdl dl-info"><span class="fdl-ts">[00:01:01]</span><span class="fdl-icon">ℹ</span><span class="fdl-msg">Loading fakemonlist.json…</span></div>
+        <div class="fdl dl-ok"><span class="fdl-ts">[00:01:01]</span><span class="fdl-icon">✓</span><span class="fdl-msg">fakemonlist.json OK — 4 entries found</span></div>
+        <div class="fdl dl-info"><span class="fdl-ts">[00:01:02]</span><span class="fdl-icon">ℹ</span><span class="fdl-msg">Loading fakemon/myfakemon.json…</span></div>
+        <div class="fdl dl-ok"><span class="fdl-ts">[00:01:02]</span><span class="fdl-icon">✓</span><span class="fdl-msg">&nbsp; myfakemon.json loaded — power level: 58</span></div>
+        <div class="fdl dl-score"><span class="fdl-ts">[00:01:03]</span><span class="fdl-icon">⭐</span><span class="fdl-msg">&nbsp; Blazkit loaded — power level: 63</span></div>
+        <div class="fdl dl-ok"><span class="fdl-ts">[00:01:04]</span><span class="fdl-icon">✓</span><span class="fdl-msg">Loaded 4 / 4 Fakemon successfully</span></div>
+        <div class="fdl dl-ok"><span class="fdl-ts">[00:01:04]</span><span class="fdl-icon">✓</span><span class="fdl-msg">Select screen ready with 4 fighters</span></div>
+      </div>
+    </div>
+
+    <p style="margin-top:12px;font-size:14px;color:var(--muted);">No red messages. The loaded count (4/4) matches the list. Your power level appears. That's a healthy load!</p>
+
+    <div class="callout win" style="margin-top:18px;"><span class="ci">🎉</span> <strong>Got it working?</strong> Celebrate! Debugging is a real skill that professional developers use every day. Every error you fix makes you better at reading code.</div>
+
+  </div><!-- /section 12 -->
 
 </div><!-- /page-wrap -->
 
