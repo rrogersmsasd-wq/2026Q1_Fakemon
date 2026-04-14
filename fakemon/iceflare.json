@@ -79,7 +79,78 @@
       "statusChance": 0.8,
       "statTarget": "accuracy"
       
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
+    },
+
+    {
+      "status": "statdwn",
+      "statusChance": 1,
+      "statTarget": "defense"
+      
     }
+
   ]
 
     },
