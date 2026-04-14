@@ -22,7 +22,7 @@
   "name": "Head Bash",
   "desc": "Bash Head.",
   "speed": "slow",
-  "damage": [1, 6767],
+  "damage": [60, 150],
   "statuses": [
     {
       "status": "statdwn",
