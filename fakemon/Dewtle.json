@@ -17,7 +17,7 @@
       "name":         "💧 Splash",
       "desc":         "Attacks the target by shooting a jet of water.",
       "speed":        "medium",
-      "damage": [15, 15],
+      "damage": [15, 16],
       "status":       null,
       "statusChance": 0
     },
@@ -35,7 +35,7 @@
       "name":         "💊 Giga Recover",
       "desc":         "Restores 50 HP.",
       "speed":        "slow",
-      "damage": [-50, -50],
+      "damage": [-49, -50],
       "status":       null,
       "statusChance": 0
     },
