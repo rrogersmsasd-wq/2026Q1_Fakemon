@@ -446,6 +446,15 @@ async function loadAll() {
       const sorted = [...good].sort((a,b) => b._power - a._power);
       dlog(`Power ranking: ${sorted.map(e => `${shortName(e.name)}=${e._power}`).join(' > ')}`, 'score');
     }
+    // CREATORS ROSTER
+    const working = DEXDATA.filter(e => !e._error);
+    const broken  = DEXDATA.filter(e =>  e._error);
+    dlog('========================================', 'ok');
+    dlog('STUDENT CONTRIBUTORS', 'ok');
+    dlog(`  Working (${working.length}): ${working.map(e => `${e.createdBy||'?'} (${e.name})`).join(', ') || 'none'}`, 'ok');
+    dlog(`  Errored (${broken.length}): ${broken.map(e => `${e.createdBy||'?'} (${e.id})`).join(', ') || 'none'}`, broken.length > 0 ? 'warn' : 'ok');
+    dlog('========================================', 'ok');
+
     buildGallery();
   } catch (e) {
     dlog(`FATAL: ${e.message}`, 'error');
