@@ -14,7 +14,7 @@
   "moves": [
     {
       "id":           "A tommy gun!",
-      "name":         "🔥 Move One",
+      "name":         "A tommy gun",
       "desc":         "A straightforward attack.",
       "speed":        "medium",
       "damage": [35, 42],
@@ -32,7 +32,7 @@
     },
     {
       "id":           "Hold me closer ed",
-      "name":         "💊 Recover",
+      "name":         "💊hold me closer ed",
       "desc":         "Restores 45 HP.",
       "speed":        "slow",
       "damage": [-45, -45],
@@ -41,7 +41,7 @@
     },
     {
       "id":           "whirlwind",
-      "name":         "📈 Power Up",
+      "name":         "📈 convenient whirlwind",
       "desc":         "Sharply raises your own ATK.",
       "speed":        "fast",
       "damage": [0, 0],
@@ -51,7 +51,7 @@
     },
     {
       "id":           "dramatic entrance",
-      "name":         "📉 ",
+      "name":         "📉dramatic re entrance ",
       "desc":         "Thick smoke clouds the enemy's vision.",
       "speed":        "medium",
       "damage": [0, 0],
