@@ -472,20 +472,21 @@ async function loadAll() {
   } catch (e) {
     dlog(`FATAL: ${e.message}`, 'error');
     dlog('Is fakemon/fakemonlist.json missing or malformed? Check the path and JSON syntax.', 'warn');
+    dlog('Individual Fakemon files should be in fakemon/json/ — e.g. fakemon/json/embork.json', 'warn');
     document.getElementById('gallery-loading').textContent = 'Failed to load fakemon list. Check the debug console.';
   }
 }
 
 async function loadEntry(id, num) {
-  dlog(`[${num}] Loading fakemon/${id}.json…`, 'info');
+  dlog(`[${num}] Loading fakemon/json/${id}.json…`, 'info');
   const entry = { id, _num: num, _error: null, _errorDetails: [], _warnings: [] };
 
   try {
-    const res = await fetch(`fakemon/${id}.json`);
+    const res = await fetch(`fakemon/json/${id}.json`);
     if (!res.ok) {
-      const msg = `HTTP ${res.status} — file 'fakemon/${id}.json' not found`;
+      const msg = `HTTP ${res.status} — file 'fakemon/json/${id}.json' not found`;
       entry._error = msg;
-      entry._errorDetails = [msg, `Make sure the file is named exactly "${id}.json" and is in the fakemon/ folder`];
+      entry._errorDetails = [msg, `Make sure the file is named exactly "${id}.json" and is in the fakemon/json/ folder`];
       dlog(`  [${id}] ✗ ${msg}`, 'error');
       return entry;
     }

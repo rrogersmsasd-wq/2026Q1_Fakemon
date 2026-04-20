@@ -1,18 +1,20 @@
-import os
+#!/usr/bin/env python3
+"""
+clean_fakemonlist.py
+Rebuilds fakemon/fakemonlist.json from every .json file in fakemon/json/.
+Run from the repo root:
+    python clean_fakemonlist.py
+"""
+
 import json
 from pathlib import Path
 
-fakemon_dir = Path("fakemon")
-output_file = fakemon_dir / "fakemonlist.json"
+json_dir    = Path("fakemon/json")
+output_file = Path("fakemon/fakemonlist.json")
 
-# Get all json files except fakemonlist.json
-files = sorted([
-    f.stem for f in fakemon_dir.glob("*.json")
-    if f.name != "fakemonlist.json"
-])
+files = sorted(f.stem for f in json_dir.glob("*.json"))
 
-with open(output_file, "w") as f:
-    json.dump({"fakemon": files}, f, indent=2)
+output_file.write_text(json.dumps({"fakemon": files}, indent=2), encoding="utf-8")
 
 print(f"Updated fakemonlist.json with {len(files)} fakemon:")
 for name in files:

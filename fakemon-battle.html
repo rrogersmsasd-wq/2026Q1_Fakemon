@@ -878,11 +878,11 @@ async function loadAll() {
 }
 
 async function loadOneFakemon(filename) {
-  dlog(`Loading fakemon/${filename}…`, 'info');
+  dlog(`Loading fakemon/json/${filename}…`, 'info');
   try {
-    const r = await fetch(`fakemon/${filename}`);
+    const r = await fetch(`fakemon/json/${filename}`);
     dlog(`  ${filename}: HTTP ${r.status}`, r.ok ? 'info' : 'error');
-    if (!r.ok) throw new Error(`HTTP ${r.status} for fakemon/${filename}`);
+    if (!r.ok) throw new Error(`HTTP ${r.status} for fakemon/json/${filename}`);
 
     let raw;
     try {
