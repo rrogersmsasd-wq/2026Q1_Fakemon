@@ -1,8 +1,8 @@
 # Fakemon Content Check Report
 
-**Generated:** 2026-04-21 18:52:50  
-**Files scanned:** 50  
-**Files flagged:** 16  
+**Generated:** 2026-04-21 18:53:17  
+**Files scanned:** 53  
+**Files flagged:** 19  
 
 ---
 
@@ -79,6 +79,14 @@
 |------|----------|--------|-------------------|-----------|
 | — | 📛 ID/Filename | REVIEW ONLY | `Could not parse JSON to check id field: Expecting value: line 34 column 17 (char 704)` | `` |
 
+## 🚩 `caypybara.json`
+
+**1 issue(s)**
+
+| Line | Category | Action | Matched / Message | Full Line |
+|------|----------|--------|-------------------|-----------|
+| — | 📛 ID/Filename | REVIEW ONLY | `Mismatch — filename is "caypybara.json" but id is "kyan1_1". The "id" field must exactly match the filename (case-sensitive).` | `` |
+
 ## 🚩 `hi.json`
 
 **1 issue(s)**
@@ -111,6 +119,16 @@
 |------|----------|--------|-------------------|-----------|
 | — | 📛 ID/Filename | REVIEW ONLY | `Mismatch — filename is "jesus.json" but id is "sea_salt". The "id" field must exactly match the filename (case-sensitive).` | `` |
 
+## 🚩 `karen.json`
+
+**3 issue(s)**
+
+| Line | Category | Action | Matched / Message | Full Line |
+|------|----------|--------|-------------------|-----------|
+| 7 | 🗳️ Political | REVIEW ONLY | `president` | `"description": "A annoying white individual in a suberban neighberhood that is probablly a HOA president",` |
+| 25 | 🗳️ Political | REVIEW ONLY | `president` | `"id":           "HOA president",` |
+| 26 | 🗳️ Political | REVIEW ONLY | `president` | `"name":         "Im the HOA president",` |
+
 ## 🚩 `rayan.json`
 
 **1 issue(s)**
@@ -136,6 +154,14 @@
 | Line | Category | Action | Matched / Message | Full Line |
 |------|----------|--------|-------------------|-----------|
 | 27 | 😠 Bullying/Targeting | REVIEW ONLY | `stinks` | `"desc": "Exhales a puff of truly awful air. May confuse, mostly just stinks.",` |
+
+## 🚩 `umpire.json`
+
+**1 issue(s)**
+
+| Line | Category | Action | Matched / Message | Full Line |
+|------|----------|--------|-------------------|-----------|
+| — | 📛 ID/Filename | REVIEW ONLY | `Case mismatch — filename is "umpire.json" but id is "Umpire". Did you mean id: "umpire"?  (IDs are case-sensitive)` | `` |
 
 ## 🚩 `zachary.json`
 
