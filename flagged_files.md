@@ -1,8 +1,8 @@
 # Fakemon Content Check Report
 
-**Generated:** 2026-04-20 16:48:45  
-**Files scanned:** 46  
-**Files flagged:** 14  
+**Generated:** 2026-04-21 18:52:00  
+**Files scanned:** 49  
+**Files flagged:** 16  
 
 ---
 
@@ -22,6 +22,14 @@
 | Line | Category | Action | Matched / Message | Full Line |
 |------|----------|--------|-------------------|-----------|
 | — | 📛 ID/Filename | REVIEW ONLY | `Mismatch — filename is "Dylan.json" but id is "yourfakemon". The "id" field must exactly match the filename (case-sensitive).` | `` |
+
+## 🚩 `Gorgrigralla.json`
+
+**1 issue(s)**
+
+| Line | Category | Action | Matched / Message | Full Line |
+|------|----------|--------|-------------------|-----------|
+| — | 📛 ID/Filename | REVIEW ONLY | `Case mismatch — filename is "Gorgrigralla.json" but id is "gorgrigralla". Did you mean id: "Gorgrigralla"?  (IDs are case-sensitive)` | `` |
 
 ## 🚩 `Milo.json`
 
@@ -78,6 +86,14 @@
 | Line | Category | Action | Matched / Message | Full Line |
 |------|----------|--------|-------------------|-----------|
 | 18 | 😠 Bullying/Targeting | REVIEW ONLY | `useless` | `"desc":         "Mock this useless creature.",` |
+
+## 🚩 `immortal.json`
+
+**1 issue(s)**
+
+| Line | Category | Action | Matched / Message | Full Line |
+|------|----------|--------|-------------------|-----------|
+| 7 | 😠 Bullying/Targeting | REVIEW ONLY | `weak` | `"description": "WHERE IS OMNI-MAN? WHERE IS HE!!!  Is weak to viltramites and sea salt.",` |
 
 ## 🚩 `jacob.json`
 
