@@ -1,0 +1,64 @@
+{
+  "id": "yangtzegiantsoftshellturtlejson_1",
+  "name": "Yangtze giant softshell turtle",
+  "createdBy": "Rowan James Rogers",
+  "emoji": "🐢",
+  "type": "Earth",
+  "hp": 121,
+  "atk": 120,
+  "speed": 120,
+  "defense": 40,
+  "accuracy": 92,
+  "color": "#228B22",
+  "description": "A really rare large turtle.",
+  "moves": [
+    {
+      "id": "yangtzegiantsoftshellturtlejson_m1",
+      "name": "Snap!",
+      "speed": "fast",
+      "damage": [
+        15,
+        15
+      ],
+      "status": "burn",
+      "statusChance": 0.8,
+      "desc": "you just got bit by a large reptile!"
+    },
+    {
+      "id": "yangtzegiantsoftshellturtlejson_m2",
+      "name": "turtle beard of death",
+      "speed": "slow",
+      "damage": [
+        28,
+        36
+      ],
+      "status": "confuse",
+      "statusChance": 0.5,
+      "desc": "oh no I'm sorry did my beard blow in your face..."
+    },
+    {
+      "id": "yangtzegiantsoftshellturtlejson_m3",
+      "name": "ancient wisdom realization",
+      "speed": "slow",
+      "damage": [
+        0,
+        0
+      ],
+      "status": "statup",
+      "statusChance": 1,
+      "desc": "You have realized the truth now no enemy can take that knowledge",
+      "statTarget": "defense"
+    },
+    {
+      "id": "yangtzegiantsoftshellturtlejson_m4",
+      "name": "Reptile spit",
+      "speed": "fast",
+      "damage": [
+        0,
+        0
+      ],
+      "status": "poison",
+      "statusChance": 1
+    }
+  ]
+}
